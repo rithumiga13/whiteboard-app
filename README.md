@@ -1,16 +1,63 @@
-# React + Vite
+# Whiteboard App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time collaborative whiteboard built with React, Socket.IO, and Rough.js.
 
-Currently, two official plugins are available:
+## Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Landing Page
+![Landing Page](screenshots/landing.png)
 
-## React Compiler
+### Whiteboard Canvas
+![Whiteboard Canvas](screenshots/whiteboard.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Real-time collaboration — multiple users can draw simultaneously in the same room
+- Freehand drawing with smooth brush strokes
+- Shape tools: line, rectangle, ellipse
+- Eraser tool
+- Color palette and stroke size controls
+- Undo / Redo
+- Room system — create or join rooms with a shared room ID
+- Persistent drawings via MongoDB
+- User presence indicators
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 19, Vite |
+| Drawing | Rough.js, HTML5 Canvas |
+| Real-time | Socket.IO |
+| State | Zustand |
+| Backend | Node.js, Express |
+| Database | MongoDB |
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- MongoDB running locally (`mongodb://localhost:27017`)
+
+### Install & Run
+
+```bash
+npm install
+npm run dev:all
+```
+
+This starts both the Vite dev server (`http://localhost:5173`) and the Socket.IO backend (`http://localhost:3001`).
+
+### Build
+
+```bash
+npm run build
+```
+
+## Usage
+
+1. Open `http://localhost:5173`
+2. Enter your name and click **Create Room** (or paste a room ID to join an existing one)
+3. Share the room ID with others so they can join
+4. Draw together in real time
