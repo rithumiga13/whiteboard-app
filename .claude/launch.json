@@ -2,9 +2,9 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "whiteboard-client",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "name": "whiteboard",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/tmp/start-whiteboard.sh"],
       "port": 5173
     }
   ]
